@@ -103,9 +103,32 @@ public:
     }
     
 
+    //Перегрузка оператора умножения +:
+    Matrix& operator+(Matrix& _matrix) {
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < columns; j++)
+                matrix[i][j] += _matrix.matrix[i][j];
+        return  *this;
+    }
+    //Перегрузка оператора умножения -:
+    Matrix& operator-(Matrix& _matrix) {
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < columns; j++)
+                matrix[i][j] -= _matrix.matrix[i][j];
+        return  *this;
+    }
+     
+    
+    //Перегрузка оператора умножения *:
+    Matrix& operator*(Matrix& _matrix) {
+        Matrix new_matrix(3, 3);
 
-    Matrix& operator+(Matrix&) {}
-   
+        for (int i = 0; i < columns; i++)
+            for (int j = 0; j < columns; j++)
+                for (int k = 0; k < columns; k++)
+                    new_matrix[i][j] += matrix[i][k] * _matrix[k][j];
+        return new_matrix;
+    }
 
 };
 

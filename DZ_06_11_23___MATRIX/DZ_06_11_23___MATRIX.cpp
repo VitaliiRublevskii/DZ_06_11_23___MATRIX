@@ -33,11 +33,24 @@ int main()
     cout << matrix2.getMatrixIJ(2, 1) << endl;
     cout << endl << endl;
 
-    Matrix<int> matrix4(3, 3);
-    matrix4.fillMatrixHand(3, 3);
-    matrix4.print();
+    //Matrix<int> matrix4(3, 3);
+    //matrix4.fillMatrixHand(3, 3);
+    //matrix4.print();
+    //cout << endl << endl;
 
+    cout << "Sum matrix1 and matrix2:" << endl;
+    matrix1 + matrix2;
+    matrix1.print();
+    cout << endl << endl;
+    cout << "Subtraction matrix1 and matrix2:" << endl;
+    matrix1 - matrix2;
+    matrix1.print();
     
+    Matrix<int> matrix4(3, 3);
+    matrix4 = matrix1 * matrix2;
+    matrix1.print();
+
+
 }
 
 
